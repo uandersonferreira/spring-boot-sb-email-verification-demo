@@ -1,5 +1,6 @@
 package br.com.uanderson.sbemailverificationdemo.interfaces;
 
+import br.com.uanderson.sbemailverificationdemo.model.token.VerificationToken;
 import br.com.uanderson.sbemailverificationdemo.model.user.User;
 import br.com.uanderson.sbemailverificationdemo.requestDto.RegistrationRequest;
 
@@ -12,4 +13,6 @@ public interface UserServiceInterface {
     Optional<User> findByEmail(String email);
 
     void saveUserVerificationToken(User userEvent, String verificationToken);
+
+    String validateToken(String token);
 }
